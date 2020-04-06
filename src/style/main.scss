@@ -1,1 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 @import './mainMenu.scss';
+@import './login.scss';
+@import './button.scss';
+
+* {
+  font-family: 'Aclonica', sans-serif;
+}

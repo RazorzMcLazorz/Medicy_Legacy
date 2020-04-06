@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import reducers from './reducers'
 
 import MainMenu from './components/mainMenu'
+import Login from './components/login'
 
 const createStoreWithMiddleware = applyMiddleware()(createStore)
 
@@ -19,6 +20,7 @@ function main() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={MainMenu} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </BrowserRouter>
     </Provider>

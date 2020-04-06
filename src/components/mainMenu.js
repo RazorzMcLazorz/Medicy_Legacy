@@ -9,11 +9,23 @@ class MainMenu extends Component {
       <div className='mainMenu'>
         <img src='./assets/mainMenuBackGround.jpg' style={{ width: '100vw', height: '100vh', position: 'fixed' ,zIndex: -1}}/>
         <div className='body'>
-          <div className='button'>
-            New
-          </div>
-          <div className='button'>
-            Load
+          <h1>
+            Medicy
+          </h1>
+          <div className='buttonRow'>
+            {this.props.user ?
+            <div>
+              <div className='button'>
+                New
+              </div>
+              <div className='button'>
+                Load
+              </div>
+            </div> :
+            <a className='button' href='/login'>
+              Login
+            </a> 
+            }
           </div>
         </div>
       </div>
