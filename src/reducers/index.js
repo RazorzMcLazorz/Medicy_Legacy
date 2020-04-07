@@ -2,7 +2,8 @@ import { ADD_ARTICLE, CHANGE_STATE } from "./constants/action-types"
 
 // Redux Store
 const initialState = {
-  link: 'http://localhost:5000',
+  link: 'https://medicydb.herokuapp.com/',
+  // link: 'http://localhost:5000',
   user: '',
   userperm: ''
 }
