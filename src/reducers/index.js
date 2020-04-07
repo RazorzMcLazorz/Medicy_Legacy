@@ -2,7 +2,9 @@ import { ADD_ARTICLE, CHANGE_STATE } from "./constants/action-types"
 
 // Redux Store
 const initialState = {
-  user: ''
+  link: 'http://localhost:5000',
+  user: '',
+  userperm: ''
 }
 
 const rootReducer = (state = initialState, action) => {
