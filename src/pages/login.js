@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../reducers/actions'
+import Background from '../components/backgroundImage'
 
 class Login extends Component {
   state = {
@@ -48,7 +49,7 @@ class Login extends Component {
   render() {
     return (
       <div className='login'>
-        <img src='./assets/mainMenuBackGround.jpg' style={{ width: '100vw', height: '100vh', position: 'fixed' ,zIndex: -1}}/>
+        <Background/>
         <div className='body'>
           <div className='loginComponent'>
             <div>

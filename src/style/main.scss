@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
-@import './mainMenu.scss';
-@import './login.scss';
-@import './button.scss';
+@import './pages/mainMenu.scss';
+@import './pages/login.scss';
+@import './components/button.scss';
+@import './pages/kingdom.scss';
+@import './pages/createGame.scss';
 
 * {
   font-family: 'Aclonica', sans-serif;
