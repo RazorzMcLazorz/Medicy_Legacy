@@ -21,10 +21,13 @@ class MainMenu extends Component {
   }
 
   componentDidMount() {
-    this.props.changeState({user: this.getCookie('username')})
+    fetch(`${this.props.link}/`)
+    .then(res => this.props.changeState({user: this.getCookie('username'), db: res.ok}))
+    .catch(res => console.log(res))
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className='mainMenu'>
         <img src='./assets/mainMenuBackGround.jpg' style={{ width: '100vw', height: '100vh', position: 'fixed' ,zIndex: -1}}/>
@@ -32,21 +35,25 @@ class MainMenu extends Component {
           <h1>
             Medicy
           </h1>
-          <div className='buttonRow'>
-            {this.props.user ?
-            <div>
-              <div className='button'>
-                New
-              </div>
-              <div className='button'>
-                Load
-              </div>
-            </div> :
-            <a className='button' href='/login'>
-              Login
-            </a> 
-            }
-          </div>
+          {this.props.db ?
+            <div className='buttonRow'>
+              {this.props.user ?
+              <div>
+                <div className='button'>
+                  New
+                </div>
+                <div className='button'>
+                  Load
+                </div>
+              </div> :
+              <a className='button' href='/login'>
+                Login
+              </a> }
+            </div>:
+            <div className='buttonRow'>
+              Loading for Database to boot up please wait a minute! =)
+            </div>
+          }
         </div>
       </div>
     )
