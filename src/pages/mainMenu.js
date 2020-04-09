@@ -39,7 +39,7 @@ class MainMenu extends Component {
             <div className='buttonRow'>
               {this.props.user ?
               <div>
-                <a className='button'>
+                <a className='button' href="/create">
                   New
                 </a>
                 <a className='button'>

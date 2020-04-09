@@ -1,5 +1,18 @@
 .createGame {
   .body {
-    
+    .createTitle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 20vh;
+      font-size: 50px;
+    }
+    .createOptions {
+      
+    }
+    .createSave {
+
+    }
   }
 }

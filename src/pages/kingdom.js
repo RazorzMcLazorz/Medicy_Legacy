@@ -11,7 +11,7 @@ class Kingdom extends Component {
       <div className='kingdom'>
         <Background/>
         <div className='body'>
-
+          
         </div>
       </div>
     )

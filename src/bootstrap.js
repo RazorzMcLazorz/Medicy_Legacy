@@ -8,6 +8,7 @@ import reducers from './reducers'
 import MainMenu from './pages/mainMenu'
 import Login from './pages/login'
 import Kingdom from './pages/kingdom'
+import Create from './pages/createGame'
 
 const createStoreWithMiddleware = applyMiddleware()(createStore)
 
@@ -23,6 +24,7 @@ function main() {
           <Route exact path="/" component={MainMenu} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/kingdom" component={Kingdom} />
+          <Route exact path="/create" component={Create} />
         </Switch>
       </BrowserRouter>
     </Provider>

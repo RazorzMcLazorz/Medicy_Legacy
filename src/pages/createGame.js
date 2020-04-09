@@ -11,7 +11,19 @@ class CreateGame extends Component {
       <div className='createGame'>
         <Background/>
         <div className='body'>
+          <div className='createTitle'>
+            Create Game
+          </div>
+          <div className='createOptions'>
+            <div>
 
+            </div>
+          </div>
+          <div className='createSave'>
+            <div>
+              
+            </div>
+          </div>
         </div>
       </div>
     )
