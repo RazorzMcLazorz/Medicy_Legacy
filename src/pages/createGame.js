@@ -5,6 +5,31 @@ import Background from '../components/backgroundImage'
 
 class CreateGame extends Component {
 
+  state = {
+    mapSize: 'Small',
+    difficulty: 'Normal',
+    timeLimit: false
+  }
+
+  cgsButton(funct, type) {
+    return (
+    <div className='cgsButton' onClick={funct}>
+      {type}
+    </div>)
+  }
+
+  mapSizeChange(type) {
+    this.setState({ mapSize: type })
+  }
+
+  difficultyChange(type) {
+    this.setState({ difficulty: type })
+  }
+
+  TimelimitChange(type) {
+    this.setState({ timeLimit: type })
+  }
+
   render() {
     console.log(this.props)
     return (
@@ -14,41 +39,28 @@ class CreateGame extends Component {
           <div className='createTitle'>
             Create Game
           </div>
+          <div className='createReason'>
+            Reason
+          </div>
           <div className='createOptions'>
             <div>
               <div>
-                <div>Map Size:</div>
+                <div>Map Size: {this.state.mapSize}</div>
                 <div>
-                  <div className='cgsButton'>
-                    Small
-                  </div>
-                  <div className='cgsButton'>
-                    Medium
-                  </div>
-                  <div className='cgsButton'>
-                    Large
-                  </div>
+                  {this.cgsButton(() => this.mapSizeChange('Small'), 'Small')}
+                  {this.cgsButton(() => this.mapSizeChange('Medium'), 'Medium')}
+                  {this.cgsButton(() => this.mapSizeChange('Large'), 'Large')}
                 </div>
-                <div>Difficulty:</div>
+                <div>Difficulty: {this.state.difficulty}</div>
                 <div>
-                  <div className='cgsButton'>
-                    Easy
-                  </div>
-                  <div className='cgsButton'>
-                    Normal
-                  </div>
-                  <div className='cgsButton'>
-                    Hard
-                  </div>
+                  {this.cgsButton(() => this.difficultyChange('Easy'), 'Easy')}
+                  {this.cgsButton(() => this.difficultyChange('Normal'), 'Normal')}
+                  {this.cgsButton(() => this.difficultyChange('Hard'), 'Hard')}
                 </div>
-                <div>Limit:</div>
+                <div>Time Limit: {this.state.timeLimit ? 'Yes' : 'No'}</div>
                 <div>
-                  <div className='cgsButton'>
-                    No
-                  </div>
-                  <div className='cgsButton'>
-                    Yes
-                  </div>
+                  {this.cgsButton(() => this.TimelimitChange(false), 'No')}
+                  {this.cgsButton(() => this.TimelimitChange(true), 'Yes')}
                 </div>
               </div>
               <div>
