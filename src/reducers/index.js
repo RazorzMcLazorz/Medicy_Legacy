@@ -6,7 +6,10 @@ const initialState = {
   // link: 'http://localhost:5000',
   user: '',
   userperm: '',
-  db: false
+  db: false, // Checks to see if the database is running
+  difficulty: '',
+  timeLimit: '',
+  mapSize: ''
 }
 
 const rootReducer = (state = initialState, action) => {

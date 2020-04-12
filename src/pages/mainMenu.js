@@ -27,7 +27,6 @@ class MainMenu extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className='mainMenu'>
         <Background/>
