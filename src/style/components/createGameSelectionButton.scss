@@ -1,0 +1,23 @@
+.cgsButton {
+  display: flex;
+  width: 150px;
+  height: 30px;
+  background-color: grey;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-color: #ff9900;
+  border-style: ridge;
+  border-width: 5px;
+  border-radius: 5px;
+  margin: 5px;
+  color: black;
+  text-decoration: none;
+}
+.cgsButton:hover {
+  background-color: #678;
+  cursor: pointer;
+  border-color: #996600;
+  color: black;
+  text-decoration: none;
+}

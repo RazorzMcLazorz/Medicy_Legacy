@@ -16,7 +16,44 @@ class CreateGame extends Component {
           </div>
           <div className='createOptions'>
             <div>
-
+              <div>
+                <div>Map Size:</div>
+                <div>
+                  <div className='cgsButton'>
+                    Small
+                  </div>
+                  <div className='cgsButton'>
+                    Medium
+                  </div>
+                  <div className='cgsButton'>
+                    Large
+                  </div>
+                </div>
+                <div>Difficulty:</div>
+                <div>
+                  <div className='cgsButton'>
+                    Easy
+                  </div>
+                  <div className='cgsButton'>
+                    Normal
+                  </div>
+                  <div className='cgsButton'>
+                    Hard
+                  </div>
+                </div>
+                <div>Limit:</div>
+                <div>
+                  <div className='cgsButton'>
+                    No
+                  </div>
+                  <div className='cgsButton'>
+                    Yes
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div></div>
+              </div>
             </div>
           </div>
           <div className='createSave'>
