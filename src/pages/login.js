@@ -75,10 +75,10 @@ class Login extends Component {
               </div>
             }
             <label htmlFor='username'>Username:</label>
-            <input type='type' id='username' name='username'/>
+            <input type='type' id='username' name='username' className='cgsText'/>
             <br/>
             <label htmlFor='username'>Password:</label>
-            <input type='password' id='password' name='password'/>
+            <input type='password' id='password' name='password' className='cgsText'/>
             <br/>
             <a className='button' onClick={() => this.Login(document.getElementById("username").value, document.getElementById("password").value)}>
               Login
@@ -88,6 +88,9 @@ class Login extends Component {
                 Signup
               </a>
             }
+            <a className='button' href='/'>
+              Cancel
+            </a>
           </div>
         </div>
       </div>

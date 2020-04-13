@@ -51,8 +51,7 @@ class CreateGame extends Component {
             Reason
           </div>
           <div className='createOptions'>
-            <div>
-              <div>
+              <div className='createOptionsRow1'>
                 <div>Map Size: {this.state.mapSize}</div>
                 <div>
                   {this.cgsButton(() => this.mapSizeChange('Small'), 'Small', this.state.mapSize)}
@@ -66,12 +65,10 @@ class CreateGame extends Component {
                   {this.cgsButton(() => this.difficultyChange('Hard'), 'Hard', this.state.difficulty)}
                 </div>
                 <div>Time Limit: {this.state.timeLimit}</div>
-                <div>
-                  {this.cgsButton(() => this.TimelimitChange('No'), 'No', this.state.timeLimit)}
-                  {this.cgsButton(() => this.TimelimitChange('Yes'), 'Yes', this.state.timeLimit)}
-                </div>
+                {this.cgsButton(() => this.TimelimitChange('No'), 'No', this.state.timeLimit)}
+                {this.cgsButton(() => this.TimelimitChange('Yes'), 'Yes', this.state.timeLimit)}
+                <input className='cgsText'/>
               </div>
-            </div>
           </div>
           <div className='createSave'>
             <a href='/' className='button'>

@@ -2,7 +2,6 @@
   display: flex;
   width: 150px;
   height: 30px;
-  background-color: grey;
   justify-content: center;
   align-items: center;
   padding: 5px;
@@ -13,13 +12,13 @@
   margin: 5px;
   color: black;
   text-decoration: none;
-}
-.cgsButton:hover {
-  background-color: #678;
-  cursor: pointer;
-  border-color: #996600;
-  color: black;
-  text-decoration: none;
+  &:hover {
+    background-color: #678;
+    cursor: pointer;
+    border-color: #996600;
+    color: black;
+    text-decoration: none;
+  }
 }
 .cgsButtonSelected {
   display: flex;
