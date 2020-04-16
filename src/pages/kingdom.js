@@ -16,6 +16,14 @@ class Kingdom extends Component {
     for (let i = 0; i < num; i++) {
       arr.push(i)
     }
+    let arr2 = new Array
+    for (let i = 0; i < 4; i++) {
+      arr2[i] = new Array(4)
+      for (let j = 0; j < 4; j++) {
+        arr2[i][j] = '[' + i + ', ' + j + ']'
+      }
+    }
+    console.log(Object.values(arr2))
     return arr
   }
 
