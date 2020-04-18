@@ -5,7 +5,7 @@ import Background from '../components/backgroundImage'
 
 const terraimMap = {
   0: './assets/plainsv1.png',
-  1: './assets/dessertv1.png',
+  1: './assets/ironv1.png',
   2: './assets/mountainsv1.png',
   3: './assets/coalv1.png',
   4: './assets/hillsv1.png',
@@ -21,12 +21,18 @@ class Kingdom extends Component {
     data: {},
     lastClicked: '',
     mapSize : {
-      'small' : 5
+      'small' : 15
     }
   }
 
   tiletyper() {
-    return Math.round(Math.random() * 8)
+    const ran = Math.round(Math.random() * 25)
+    if (ran >= 9) {
+      return 0
+    }
+    else {
+      return ran
+    }
   }
 
   createArray(num) {
@@ -45,7 +51,12 @@ class Kingdom extends Component {
         onClick={() => this.setState({ lastClicked: id })} 
         className={`${this.state.lastClicked === id && 'tileSelected'} tile`}
       >
-        <img src={terraimMap[tile.terrain]}/>
+        <div 
+          className='insideTile'
+          style={{ backgroundImage: `url(${terraimMap[tile.terrain]})` }}
+        >
+          {this.state.lastClicked === id && 'X'}
+        </div>
       </div>
     )
   }
