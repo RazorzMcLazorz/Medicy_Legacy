@@ -1,5 +1,30 @@
 .kingdom {
   .body {
-    
+    .layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      .layoutRow {
+        display: flex;
+        .tile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 30px;
+          height: 30px;
+          font-size: 8px;
+          &:hover {
+            background-color: #671a09;
+            cursor: pointer;
+          }
+        }
+        .tileSelected {
+          background-color: #671a09;
+        }
+      }
+    }
   }
 }

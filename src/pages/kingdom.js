@@ -3,12 +3,30 @@ import { connect } from 'react-redux'
 import * as actions from '../reducers/actions'
 import Background from '../components/backgroundImage'
 
+const terraimMap = {
+  0: './assets/plainsv1.png',
+  1: './assets/dessertv1.png',
+  2: './assets/mountainsv1.png',
+  3: './assets/coalv1.png',
+  4: './assets/hillsv1.png',
+  5: './assets/marshv1.png',
+  6: './assets/stonev1.png',
+  7: './assets/treesv1.png',
+  8: './assets/wheatv1.png',
+}
+
 class Kingdom extends Component {
 
   state = {
+    data: {},
+    lastClicked: '',
     mapSize : {
-      'small' : 10
+      'small' : 5
     }
+  }
+
+  tiletyper() {
+    return Math.round(Math.random() * 8)
   }
 
   createArray(num) {
@@ -16,30 +34,33 @@ class Kingdom extends Component {
     for (let i = 0; i < num; i++) {
       arr.push(i)
     }
-    let arr2 = new Array
-    for (let i = 0; i < 4; i++) {
-      arr2[i] = new Array(4)
-      for (let j = 0; j < 4; j++) {
-        arr2[i][j] = '[' + i + ', ' + j + ']'
-      }
-    }
-    console.log(Object.values(arr2))
     return arr
+  }
+
+  tile(id) {
+    const tile = this.state.data[id]
+    return tile && (
+      <div
+        key={id}
+        onClick={() => this.setState({ lastClicked: id })} 
+        className={`${this.state.lastClicked === id && 'tileSelected'} tile`}
+      >
+        <img src={terraimMap[tile.terrain]}/>
+      </div>
+    )
   }
 
   MapLoader(size) {
     let arr = this.createArray(size)
 
     return (
-      <div>
+      <div className='layout'>
         {
           arr.map( row => 
-            <div style={{ display: 'flex' }}>
+            <div key={row} className='layoutRow'>
               {
                 arr.map(col => 
-                <div style={{ backgroundColor: '#FF5733', minWidth: 30, height: 30, fontSize: 8}}>
-                  {row}{col}
-                </div>  
+                  this.tile(`${row}-${col}`)
                 )
               }
             </div>
@@ -49,8 +70,33 @@ class Kingdom extends Component {
     )
   }
 
+  componentDidMount() {
+    let arr = new Array
+    for (let i = 0; i < this.state.mapSize['small']; i++) {
+      arr.push(i)
+    }
+    let arr2 = {
+      '-' : {
+        terrain: 0,
+        unit: 0,
+        building: 0
+      }
+    }
+    console.log(arr2)
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length; j++) {
+        arr2[`${i}-${j}`] = {
+          terrain: this.tiletyper(),
+          unit: 0,
+          building: 0
+        }
+      }
+    }
+    this.setState({ data: arr2})
+    console.log(arr2)
+  }
+
   render() {
-    console.log(this.props)
     return (
       <div className='kingdom'>
         <Background/>
