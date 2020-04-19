@@ -21,7 +21,9 @@ class Kingdom extends Component {
     data: {},
     lastClicked: '',
     mapSize : {
-      'small' : 15
+      'Small' : 15,
+      'Medium' : 30,
+      'Large' : 45
     }
   }
 
@@ -83,7 +85,7 @@ class Kingdom extends Component {
 
   componentDidMount() {
     let arr = new Array
-    for (let i = 0; i < this.state.mapSize['small']; i++) {
+    for (let i = 0; i < this.state.mapSize[this.props.mapSize]; i++) {
       arr.push(i)
     }
     let arr2 = {
@@ -112,7 +114,7 @@ class Kingdom extends Component {
       <div className='kingdom'>
         <Background/>
         <div className='body'>
-          {this.MapLoader(this.state.mapSize['small'])}
+          {this.MapLoader(this.state.mapSize[this.props.mapSize])}
         </div>
       </div>
     )

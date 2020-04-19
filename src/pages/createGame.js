@@ -36,6 +36,7 @@ class CreateGame extends Component {
       mapSize: this.state.mapSize,
       timeLimit: this.state.timeLimit
     })
+    this.props.history.push('/kingdom')
   }
 
   render() {
@@ -74,7 +75,7 @@ class CreateGame extends Component {
             <a href='/' className='button'>
               Cancel
             </a>
-            <a href='/kingdom' className='button' onClick={() => this.CreateGame()}>
+            <a className='button' onClick={() => this.CreateGame()}>
               Create
             </a>
           </div>
