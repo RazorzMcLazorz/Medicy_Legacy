@@ -2,27 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../reducers/actions'
 import Background from '../components/backgroundImage'
+import { getCookie } from '../functions/cookieHelper'
 
 class MainMenu extends Component {
 
-  getCookie(cname) {
-    var name = cname + "="
-    var ca = document.cookie.split(';')
-    for(var i = 0; i < ca.length; i++) {
-      var c = ca[i]
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1)
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length)
-      }
-    }
-    return ""
-  }
-
   componentDidMount() {
     fetch(`${this.props.link}/`)
-    .then(res => this.props.changeState({user: this.getCookie('username'), db: res.ok}))
+    .then(res => this.props.changeState({user: getCookie('username'), db: res.ok}))
     .catch(res => console.log(res))
   }
 

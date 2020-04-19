@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../reducers/actions'
 import Background from '../components/backgroundImage'
+import { getCookie } from '../functions/cookieHelper'
 
 const terraimMap = {
   0: './assets/plainsv1.png',
@@ -25,6 +26,10 @@ class Kingdom extends Component {
       'Medium' : 30,
       'Large' : 45
     }
+  }
+
+  getSize() {
+    return this.props.mapSize == 'Small' ? getCookie('mapZ') ? getCookie('mapZ') : this.props.mapSize : this.props.mapSize
   }
 
   tiletyper() {
@@ -85,7 +90,7 @@ class Kingdom extends Component {
 
   componentDidMount() {
     let arr = new Array
-    for (let i = 0; i < this.state.mapSize[this.props.mapSize]; i++) {
+    for (let i = 0; i < this.state.mapSize[this.getSize()]; i++) {
       arr.push(i)
     }
     let arr2 = {
@@ -114,7 +119,7 @@ class Kingdom extends Component {
       <div className='kingdom'>
         <Background/>
         <div className='body'>
-          {this.MapLoader(this.state.mapSize[this.props.mapSize])}
+          {this.MapLoader(this.state.mapSize[this.getSize()])}
         </div>
       </div>
     )

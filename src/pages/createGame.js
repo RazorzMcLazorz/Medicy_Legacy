@@ -36,6 +36,7 @@ class CreateGame extends Component {
       mapSize: this.state.mapSize,
       timeLimit: this.state.timeLimit
     })
+    document.cookie = `mapZ=${this.state.mapSize}; path=/`;
     this.props.history.push('/kingdom')
   }
 

@@ -9,7 +9,7 @@ const initialState = {
   db: false, // Checks to see if the database is running
   difficulty: '',
   timeLimit: '',
-  mapSize: 'Large'
+  mapSize: 'Small'
 }
 
 const rootReducer = (state = initialState, action) => {
